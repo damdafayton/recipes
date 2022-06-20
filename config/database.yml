@@ -6,16 +6,16 @@ default: &default
 
 development:
   <<: *default
-  database: recipe_development
+  database: blog_development
   username: postgres
   password: suwimubanga1
 
 test:
   <<: *default
-  database: recipe_development
+  database: blog_development
   username: postgres
   password: suwimubanga1
 
 production:
   <<: *default
-  database: recipe_production
+  database: blog_production

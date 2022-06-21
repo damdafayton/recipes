@@ -1,7 +1,25 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.1'
+ruby '3.1.2'
+
+gem 'rswag-api'
+gem 'rswag-ui'
+
+gem 'cancancan'
+gem 'devise'
+
+gem 'font-awesome-sass'
+# gem 'jquery-rails'
+
+gem 'bootstrap', '~> 5.1', '>= 5.1.3'
+gem 'sass-rails'
+
+gem 'ffi'
+gem 'font-awesome-sass'
+gem 'rswag-api'
+gem 'rswag-ui'
+gem 'sass-rails'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.3'
@@ -9,9 +27,8 @@ gem 'rails', '~> 7.0.3'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
-# Use sqlite3 as the database for Active Record
-# gem "sqlite3", "~> 1.4"
-gem 'pg'
+# Use postgresql as the database for Active Record
+gem 'pg', '~> 1.1'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
@@ -20,7 +37,6 @@ gem 'puma', '~> 5.0'
 gem 'importmap-rails'
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-gem 'turbo-rails'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem 'stimulus-rails'
@@ -35,9 +51,11 @@ gem 'jbuilder'
 # gem "kredis"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-gem 'bcrypt', '~> 3.1.7'
+# gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+# gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+# gem "tzinfo-data", platforms: [ :mingw, :mswin, :x64_mingw, :jruby ]
 gem 'tzinfo-data'
 
 # Reduces boot times through caching; required in config/boot.rb
@@ -50,11 +68,20 @@ gem 'bootsnap', require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem 'database_cleaner'
-  gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'rails-controller-testing'
-  gem 'rspec-rails'
+  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem 'bullet'
+  gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'slack-notifier'
+  gem 'xmpp4r'
+
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'dotenv-rails'
+  gem 'rspec-rails', '6.0.0.rc1'
+  gem 'rswag-specs'
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
 end
 
 group :development do
@@ -69,16 +96,9 @@ group :development do
 end
 
 group :test do
+  # linter
+  gem 'rubocop', '>= 1.0', '< 2.0'
+  gem 'rubocop-discourse'
+  gem 'rubocop-rspec'
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem 'capybara'
-  gem 'ffi'
-  gem 'selenium-webdriver'
-  gem 'webdrivers'
 end
-gem 'cancancan', '~> 1.9'
-gem 'devise', '~> 4.8', '>= 4.8.1'
-gem 'devise-jwt'
-gem 'dotenv-rails', groups: %i[development test]
-gem 'jwt'
-gem 'rack-cors'
-gem 'rubocop', '~> 1.30'

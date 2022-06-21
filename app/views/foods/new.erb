@@ -1,0 +1,15 @@
+<%= form_with mode: :food do |f|%>
+<div>
+  <%= f.label :name %><br>
+  <%= f.text_field :name%>
+</div>
+<div>
+  <%= f.label :measurement_unit %><br>
+  <%= f.text_field :measurement_unit%>
+</div>
+<div>
+  <%= f.label :price %><br>
+  <%= f.text_field :price%>
+</div>
+<%= f.submit "Add Food" %>
+<% end %>

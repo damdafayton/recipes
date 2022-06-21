@@ -4,7 +4,5 @@ class FoodsController < ApplicationController
     puts @foods
   end
 
-  def new
-    pass
-  end
+  def new; end
 end

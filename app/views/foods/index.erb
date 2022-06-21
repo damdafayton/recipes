@@ -1,3 +1,19 @@
-<% @foods.each  do |food| %>
-<div><%= food %></div>
-<% end %>
+<section id="foods" class="mt-2 mx-1 mx-sm-3 mx-md-5">
+  <div class="text-end">
+    <%= link_to "New Food", new_food_path, class:"btn btn-primary" %>
+  </div>
+  <div class="row row-cols-4">
+    <span>Food</span>
+    <span>Measurement Unit</span>
+    <span>Unit price</span>
+    <span>Actions</span>
+  </div>
+  <% @foods.each  do |food| %>
+  <div class="row row-cols-4">
+    <span><%= food.name %></span>
+    <span><%= food.measurement_unit %></span>
+    <span><%= food.price %></span>
+    <span>Delete</span>
+  </div>
+  <% end %>
+</section>

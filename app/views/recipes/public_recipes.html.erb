@@ -1,0 +1,15 @@
+<section class="text-center mx-2 mx-sm-3 mx-md-5">
+  <h2>PUBLIC RECIPES</h2>
+  <% @public_recipes.each do |recipe| %>
+    <div class="card mb-2 row flex-row">
+      <div class='col-5'>
+        <h3 class="card-title fs-5"><%= link_to recipe.name, recipe_path(recipe.id) %></h3>
+        <div>By <%= recipe.user.name %></div>
+      </div>
+      <div class='col-7 text-start'>
+        <div>Total food items: </div>
+        <div>Price: </div>
+      </div>
+    </div>
+  <% end %>
+</section>

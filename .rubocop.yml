@@ -7,8 +7,6 @@ AllCops:
     - "Guardfile"
     - "Rakefile"
     - "node_modules/**/*"
-    - "tmp/*"
-    - "vendor/**/*"
 
   DisplayCopNames: true
 
@@ -60,6 +58,7 @@ Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
   Enabled: false
-Layout/EndOfLine:
+Style/EndOfLine:
   EnforcedStyle: lf
-  Enabled: false
+Layout/EndOfLine:
+   Enabled: false

@@ -1,9 +1,9 @@
 class FoodsController < ApplicationController
-  def index 
+  def index
     @foods = Food.all
   end
 
-  def new 
+  def new
     pass
   end
 end

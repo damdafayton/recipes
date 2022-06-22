@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   resources :recipes, only: [:index, :show]
   resources :foods, only: [:index, :show, :create, :new]
   
-  get 'general_shopping_list', to: 'user#general_shopping_list', as: 'shopping_list_action'
+  get 'general_shopping_list', to: 'users#general_shopping_list', as: 'general_shopping_list_action'
 
 end

@@ -10,8 +10,10 @@ gem 'cancancan'
 gem 'devise'
 
 gem 'bootstrap', '~> 5.1', '>= 5.1.3'
-gem 'font-awesome-sass'
+gem 'jquery-rails'
 gem 'sass-rails'
+
+gem 'font-awesome-sass'
 
 gem 'ffi'
 

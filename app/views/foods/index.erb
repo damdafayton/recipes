@@ -1,6 +1,6 @@
 <section id="foods" class="mt-2 mx-1 mx-sm-3 mx-md-5">
   <div class="text-end">
-    <%= link_to "New Food", new_food_path, class:"btn btn-primary" %>
+    <%= link_to "New Food", new_food_path, class:"btn btn-primary btn-sm mb-2 mt-1" %>
   </div>
   <div class="row row-cols-4">
     <span>Food</span>
@@ -12,7 +12,7 @@
   <div class="row row-cols-4">
     <span><%= food.name %></span>
     <span><%= food.measurement_unit %></span>
-    <span><%= food.price %></span>
+    <span><%= food.price %>$</span>
     <span>Delete</span>
   </div>
   <% end %>

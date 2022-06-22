@@ -5,7 +5,6 @@ on: pull_request
 env:
   FORCE_COLOR: 1
   RUBY_VERSION: 3.1.x
-  DATABASE_TEST_NAME: rails_recipes_test
 
 jobs:
   rubocop-test:

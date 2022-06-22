@@ -1,15 +1,18 @@
-<%= form_with mode: :food do |f|%>
-<div>
-  <%= f.label :name %><br>
-  <%= f.text_field :name%>
-</div>
-<div>
-  <%= f.label :measurement_unit %><br>
-  <%= f.text_field :measurement_unit%>
-</div>
-<div>
-  <%= f.label :price %><br>
-  <%= f.text_field :price%>
-</div>
-<%= f.submit "Add Food" %>
-<% end %>
+<section class="d-flex flex-column align-items-center">
+  <h2>Add Food</h2>
+  <%= form_with mode: :food do |f|%>
+  <div>
+    <%= f.label :name %><br>
+    <%= f.text_field :name%>
+  </div>
+  <div>
+    <%= f.label :measurement_unit %><br>
+    <%= f.text_field :measurement_unit%>
+  </div>
+  <div>
+    <%= f.label :price %><br>
+    <%= f.text_field :price%>
+  </div>
+  <%= f.submit "Add", class:"btn btn-sm btn-success my-2" %>
+  <% end %>
+</section>

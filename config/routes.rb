@@ -1,7 +1,5 @@
-# frozen_string_literal: true
-
 Rails.application.routes.draw do
-  root 'recipes#public_recipes'
+  root 'recipes#index'
   get 'public_recipes', to: 'recipes#public_recipes', as: 'public_recipes_action'
   
   resources :recipes, only: [:index, :show]

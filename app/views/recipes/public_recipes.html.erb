@@ -3,12 +3,12 @@
   <% @public_recipes.each do |recipe| %>
     <div class="card mb-2 row flex-row">
       <div class='col-5'>
-        <h3 class="card-title fs-5"><%= link_to recipe.name, recipe_path(recipe.id) %></h3>
+        <h3 class="card-title fs-5 mb-1"><%= link_to recipe.name, recipe_path(recipe.id), class:"link-danger" %></h3>
         <div>By <%= recipe.user.name %></div>
       </div>
       <div class='col-7 text-start'>
         <div>Total food items: <%= recipe.recipe_foods.length %></div>
-        <div>Price: </div>
+        <div>Price: <%= recipe.price %>$</div>
       </div>
     </div>
   <% end %>

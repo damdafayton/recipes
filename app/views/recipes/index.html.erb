@@ -1,1 +1,9 @@
-<h1>List of all recipes</h1>
+<div class="text-end">
+    <%= button_to "New Recipe", recipes_path, class:"btn btn-primary" %>
+  </div>
+<% @recipes.each do |recipe|%>
+<p><%=recipe.name%></p>
+<%= recipe.preparation_time %>
+<%= recipe.cooking_time %>
+<%= recipe.description %>
+<% end %>

@@ -26,7 +26,6 @@ third_recipe_food = RecipeFood.create(recipe_id: second_recipe.id, food_id: firs
 fourth_recipe_food = RecipeFood.create(recipe_id: second_recipe.id, food_id: third_food.id, quantity: 0.8)
 fifth_recipe_food = RecipeFood.create(recipe_id: first_recipe.id, food_id: fourth_food.id, quantity: 0.5)
 
-
 first_inventory = Inventory.create(name:"Inventroy of Kuti", user_id: first_user.id)
 second_inventory = Inventory.create(name:"Inventroy of Buno", user_id: second_user.id)
 

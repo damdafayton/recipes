@@ -1,20 +1,33 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.all
+    @user = current_user
+    @recipes = @user.recipes
   end
 
-  # def show
-  #   @recipe = Recipe.find(:params[id])
-  # end
+  def show
+    @recipe = Recipe.find(params[:id])
+  end
 
-  def new; end
+  def new
+    @recipe = Recipe.new
+  end
 
   def create
-    @recipe = Recipe.new(recipe_params)
+    @user = current_user
+    @recipe = @user.recipes.new(recipe_params)
     if @recipe.save
-      redirect_to recipe_path, notice: 'Recipe created successfully!'
+      redirect_to recipes_path, notice: 'Recipe created successfully!'
     else
       render new, status: :unprocessable_entity
+    end
+  end
+
+  def delete
+    @recipe = Recipe.find(params[:id])
+    if @recipe.destroy
+      redirect_to recipes_path, notice: 'Deleted Successfully'
+    else
+      redirect_to root, notice: 'Not deleted'
     end
   end
 
@@ -26,6 +39,6 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.permit(:name, :preparation_time, :cooking_time, :description, :public)
+    params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
   end
 end

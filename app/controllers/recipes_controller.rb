@@ -6,6 +6,14 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    data = Recipe.where(id: params[:id])
+    @recipe = data[0]
+    @inventory_foods = Food.all.joins('INNER JOIN recipe_foods ON foods.id = recipe_foods.food_id')
+      .order(created_at: :desc).select('foods.*, recipe_foods.quantity, recipe_foods.id as recipe_foods_id')
+      .where(recipe_foods: { recipe_id: params[:id] })
+    return unless current_user
+
+    @inventory_hash = Inventory.all.where(user_id: current_user.id).map { |inventory| [inventory.name, inventory.id] }
   end
 
   def new
@@ -32,7 +40,7 @@ class RecipesController < ApplicationController
   end
 
   def public_recipes
-    @public_recipes = Recipe.includes(:user).all.where(public: true).order(created_at: :desc)
+    @public_recipes = Recipe.includes(:user, :recipe_foods).all.where(public: true).order(created_at: :desc)
     render :public_recipes
   end
 

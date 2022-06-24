@@ -1,19 +1,21 @@
-<div class="text-end">
-  <%= link_to "New Recipe", new_recipe_path, class:"btn btn-primary" %>
-</div>
-<div class="all-recipes">
-  <% if @recipes.empty? %>
-    <p>No Recipes Yet - Please Add</p>
-    <%else%>
-    <% @recipes.each do |recipe| %>
-      <div class="recipe">
-        <h3><%= recipe.name %></h3>
-        <p><%= link_to('Remove', delete_recipe_path(recipe)) %></p>
-        <p>Preparation Time: <%= recipe.preparation_time %></p>
-        <p>Cooking Time: <%= recipe.cooking_time %></p>
-        <p>Instructions: <%= recipe.description %></p>
+<div class="container box-shad">
+  <div class="text-end">
+    <%= link_to "New Recipe", new_recipe_path, class:"btn btn-primary " %>
+  </div>
+  <div class="row  mt-3 p-3">
+    <% if @recipes.empty? %>
+      <p class=" text-center border border-dark bg-danger">No Recipes Yet - Please Add</p>
+      <%else%>
+      <% @recipes.each do |recipe| %>
+      <div class="card mb-2 row flex-row bg-light">
+      <div class='col-5'>
+        <h1 class="card-title fs-5"><%= link_to recipe.name, recipe_path(recipe.id) %></h1>
+        <div class='text-start mt-5'><%= link_to('Remove', delete_recipe_path(recipe), class:"btn btn-primary") %></div>
       </div>
-    <% end %>
-  <%end%>
-
+      <div class='col-7 text-start'>
+       <p class="text-start w-100 "><%= recipe.description %></p>
+      </div>
+      <% end %>
+    <%end%>
+</div>
 </div>

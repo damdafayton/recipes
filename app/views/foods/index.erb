@@ -9,11 +9,11 @@
     <span>Actions</span>
   </div>
   <% @foods.each  do |food| %>
-  <div class="row row-cols-4">
+  <div class="row row-cols-4 my-2">
     <span><%= food.name %></span>
     <span><%= food.measurement_unit %></span>
     <span><%= food.price %>$</span>
-    <span>Delete</span>
+    <span><%= link_to 'Delete', food_path(100), method: :delete, class:"btn btn-sm btn-danger" %></span>
   </div>
   <% end %>
 </section>

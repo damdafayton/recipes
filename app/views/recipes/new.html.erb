@@ -1,0 +1,10 @@
+<div class="recipe-form">
+  <%= form_with model: @recipe, url: recipes_path do |form| %>
+      <%= form.text_field :name, placeholder: 'Name'%>
+      <%= form.number_field :preparation_time, placeholder: 'Preparation Time' %>
+      <%= form.number_field :cooking_time, placeholder: 'Cooking Time' %>
+      <%= form.text_field :description, placeholder: 'Description' %>
+      <%= form.select :public, options_for_select([true, false]) %>
+      <%= form.submit "Create" %>
+    <% end %>
+</div>

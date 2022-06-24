@@ -1,6 +1,6 @@
 <section class="d-flex flex-column align-items-center">
   <h2>Add Food</h2>
-  <%= form_with mode: :food do |f|%>
+  <%= form_with scope: :food, url: foods_path do |f|%>
   <div>
     <%= f.label :name %><br>
     <%= f.text_field :name%>

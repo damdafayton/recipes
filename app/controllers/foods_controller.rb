@@ -5,6 +5,14 @@ class FoodsController < ApplicationController
 
   def new; end
 
+  def destroy
+    if @food.destroy
+      redirect_to foods_path
+    else
+      redirect_back(fallback_location: root_path)
+    end
+  end
+
   def create
     new_food = Food.new(foods_params)
     new_food.user_id = current_user.id

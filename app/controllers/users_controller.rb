@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def general_shopping_list
+    
     @user = current_user
 
     (@required_foods_list, @required_foods_in_users_recipes,

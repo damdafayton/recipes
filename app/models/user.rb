@@ -1,5 +1,10 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
   has_many :recipes
+  has_many :foods
 
   def required_foods_data
     (_required_foods_list, _required_foods_in_recipes) = required_foods_in_recipes

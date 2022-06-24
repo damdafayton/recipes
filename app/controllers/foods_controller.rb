@@ -6,6 +6,7 @@ class FoodsController < ApplicationController
   def new; end
 
   def destroy
+    @food = Food.find(params[:id])
     if @food.destroy
       redirect_to foods_path
     else

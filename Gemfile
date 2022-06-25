@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.2'
+ruby '~> 3.1.1'
 
 gem 'rswag-api'
 gem 'rswag-ui'
@@ -10,8 +10,10 @@ gem 'cancancan'
 gem 'devise'
 
 gem 'bootstrap', '~> 5.1', '>= 5.1.3'
-gem 'font-awesome-sass'
+gem 'jquery-rails'
 gem 'sass-rails'
+
+gem 'font-awesome-sass'
 
 gem 'ffi'
 

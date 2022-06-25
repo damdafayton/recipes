@@ -1,0 +1,48 @@
+<div class="card m-4">
+  <div class="card-body">
+    <h1 class="card-title text-center fw-bolder"><%= @recipe.name %></h1>
+    <div class="d-flex justify-content-between">
+    <p>Preparation Time: <%= @recipe.preparation_time %></p>
+    <div class="d-flex justify-content-between">
+    <p class="fw-bold">Public</p>
+    <%# <%=   ? 'Public' : 'Private'  %>
+    <div class="form-check form-switch">
+  <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+</div>
+</div>
+</div>
+<p>Cooking Time: <%= @recipe.cooking_time %></p>
+  </div>
+</div>
+<p class="m-5">Steps go Here...</p>
+<div class="d-flex justify-content-around m-4">
+    <button type="button" class="btn btn-primary special"><%= link_to('Generate Shopping List', general_shopping_list_action_path) %></button>
+    <button type="button" class="btn btn-primary">
+      <%= link_to 'Add Ingredients', new_inventory_food_path, class: "text-light"%>
+    </button>
+</div>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Food</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Value</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @inventory_foods.each do |invent| %>
+    <tr>
+      <th scope="col"><%= invent.name %></th>
+      <td scope="col"><%= invent.quantity %></td>
+      <td scope="col"><%= invent.price%></td>
+      <td class="actions">
+        <p><%= link_to "Modify" %></p>
+        <p><%= link_to "Remove" %></p>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

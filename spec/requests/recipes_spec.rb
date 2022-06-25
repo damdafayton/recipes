@@ -15,7 +15,6 @@ RSpec.describe 'Recipes', type: :request do
     it 'renders correct template' do
       expect(response).to render_template(:index)
     end
-
   end
 
   describe 'GET /show' do
@@ -34,6 +33,5 @@ RSpec.describe 'Recipes', type: :request do
     it 'renders correct template' do
       expect(response).to render_template(:show)
     end
-
   end
 end

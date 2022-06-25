@@ -1,7 +1,7 @@
 <section class='text-center'>
-  <h2>SHOPPING LIST </h2><span><h4>for <%= @user.name %></h4></span>
+  <h2>SHOPPING LIST </h2><span><h4>for <%= @user&.name %></h4></span>
   <div class='mx-2 d-flex justify-content-center flex-column'>
-    <% @user.recipes.each do |recipe|%>
+    <% @user&.recipes&.each do |recipe|%>
       <div class="mb-3">
         <h3 class="fs-4"><%= recipe.name %></h3>
         <div class="d-flex justify-content-center gap-5 mb-2">

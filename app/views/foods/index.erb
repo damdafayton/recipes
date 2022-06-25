@@ -13,7 +13,7 @@
     <span><%= food.name %></span>
     <span><%= food.measurement_unit %></span>
     <span><%= food.price %>$</span>
-    <span><%= link_to 'Delete', food_path(100), method: :delete, class:"btn btn-sm btn-danger" %></span>
+    <span><%= button_to 'Delete', food_path(food.id), method: :delete, class:"btn btn-sm btn-danger" %></span>
   </div>
   <% end %>
 </section>

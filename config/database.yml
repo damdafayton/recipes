@@ -11,7 +11,7 @@ default: &default
 
 development:
   <<: *default
-  database: rails_recipes_dev
+  database: <%= ENV['DATABASE_DEV_NAME'] %>
   username: postgres
   password: postgres
 
@@ -50,7 +50,7 @@ test:
   # database: rails_project_test
   # host: localhost
   host: localhost
-  database: rails_recipes_test
+  database: <%= ENV['DATABASE_TEST_NAME'] %>
   username: postgres
   password: postgres
   # username: <%= ENV["POSTGRES_TEST_USER"] %>

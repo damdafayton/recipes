@@ -7,14 +7,14 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-first_user = User.create(name: "Kuti")
-second_user = User.create(name: "Buno")
-third_user = User.create(name: "Dupo")
+first_user = User.create(name: "Kuti",email: 'fake@fake.com', password:'123456')
+second_user = User.create(name: "Buno", email: 'fake2@fake.com', password:'123456')
+third_user = User.create(name: "Dupo", email: 'fake3@fake.com', password:'123456')
 
-first_food = Food.create(name:"Tomato", measurement_unit:"kg", price: 1.5)
-second_food = Food.create(name:"Potato", measurement_unit:"kg", price: 2.2)
-third_food = Food.create(name:"Cucumber", measurement_unit:"kg", price: 3)
-fourth_food = Food.create(name:"Onion", measurement_unit:"kg", price: 0.5)
+first_food = Food.create(name:"Tomato", measurement_unit:"kg", price: 1.5,user_id: first_user.id)
+second_food = Food.create(name:"Potato", measurement_unit:"kg", price: 2.2,user_id: first_user.id)
+third_food = Food.create(name:"Cucumber", measurement_unit:"kg", price: 3,user_id: first_user.id)
+fourth_food = Food.create(name:"Onion", measurement_unit:"kg", price: 0.5,user_id: first_user.id)
 
 first_recipe = Recipe.create(name: "First recipe", preparation_time: "25 minutes", cooking_time: "1.33 hours", description: "cook it well",public: true,user_id: first_user.id)
 second_recipe = Recipe.create(name: "Second recipe", preparation_time: "30 minutes", cooking_time: "1 hour", description: "wash the pepper",public: true,user_id: second_user.id)

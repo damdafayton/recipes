@@ -18,6 +18,7 @@ class RecipesController < ApplicationController
     @inventory_hash = Inventory.all.where(user_id: current_user.id).map { |inventory| [inventory.name, inventory.id] }
   end
 
+  
   def new
     @recipe = Recipe.new
   end

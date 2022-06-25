@@ -1,6 +1,5 @@
 class Recipe < ApplicationRecord
   belongs_to :user
-  has_many :recipe_foods
 
   def price
     _recipe_foods = recipe_foods.includes(:food)
